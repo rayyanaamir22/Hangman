@@ -33,7 +33,7 @@ while True:
         foundAllLetters = True
         for i in range(len(f.secretWord)):
             # Ignore non-letter characters when determining the amount of correct guesses
-            if f.secretWord[i] not in f.spaces and f.secretWord[i] not in f.dashes and f.secretWord[i] not in f.apostrophes and f.secretWord[i] not in .colons:
+            if f.secretWord[i] not in f.spaces and f.secretWord[i] not in f.dashes and f.secretWord[i] not in f.apostrophes and f.secretWord[i] not in f.colons:
               if f.secretWord[i] not in correctLetters:
                 foundAllLetters = False
                 break
