@@ -3,7 +3,7 @@ import random
 import os
 
 import functions
-import categories
+import categories as c
 
 # Functions
 
@@ -21,25 +21,25 @@ def wordCategory():
   # Derive the random secret word from the user's chosen category
   # I had to write it all out because for some reason the rest of the program would not have access to the variable even if I globalized it.
   if functions.category == 'ANIMALS':
-    functions.secretWord = functions.getRandomWord(categories.animals)
+    functions.secretWord = functions.getRandomWord(c.animals)
   elif functions.category == 'SCIENCE':
-    functions.secretWord = functions.getRandomWord(categories.science)
+    functions.secretWord = functions.getRandomWord(c.science)
   elif functions.category == 'MATH':
-    functions.secretWord = functions.getRandomWord(categories.math)
+    functions.secretWord = functions.getRandomWord(c.math)
   elif functions.category == 'COMPUTER SCIENCE':
-    functions.secretWord = functions.getRandomWord(categories.compSci)
+    functions.secretWord = functions.getRandomWord(c.compSci)
   elif functions.category == 'SPORTS':
-    functions.secretWord = functions.getRandomWord(categories.sports)
+    functions.secretWord = functions.getRandomWord(c.sports)
   elif functions.category == 'MOVIES':
-    functions.secretWord = functions.getRandomWord(categories.movies)
+    functions.secretWord = functions.getRandomWord(c.movies)
   elif functions.category == 'MOVIE CHARACTERS':
-    functions.secretWord = functions.getRandomWord(categories.movieCharacters)
+    functions.secretWord = functions.getRandomWord(c.movieCharacters)
   elif functions.category == 'TV SHOWS':
-    functions.secretWord = functions.getRandomWord(categories.tvShows)
+    functions.secretWord = functions.getRandomWord(c.tvShows)
   elif functions.category == 'RANDOM':
-    functions.secretWord = functions.getRandomWord(categories.randomCategory)
+    functions.secretWord = functions.getRandomWord(c.randomCategory)
   elif functions.category == 'CUSTOM':
-    functions.secretWord = functions.getRandomWord(categories.customCategory)
+    functions.secretWord = functions.getRandomWord(c.customCategory)
   else: 
     return None
 
@@ -57,7 +57,7 @@ def displayBoard(HANGMANPICS, missedLetters, correctLetters, secretWord):
 
     print('Category: ' + category)
     #print(category).centre(width)
-    print('Win streak: {0}' .format(winStreak))
+    print(f'Win streak: {winStreak}')
     print(HANGMANPICS[len(missedLetters)])
     print()
 
@@ -125,25 +125,25 @@ def getGuess(alreadyGuessed):
 
 def nextSecretWord():
   if functions.category == 'ANIMALS':
-    functions.secretWord = functions.getRandomWord(categories.animals)
+    functions.secretWord = functions.getRandomWord(c.animals)
   elif functions.category == 'SCIENCE':
-    functions.secretWord = functions.getRandomWord(categories.science)
+    functions.secretWord = functions.getRandomWord(c.science)
   elif functions.category == 'MATH':
-    functions.secretWord = functions.getRandomWord(categories.math)
+    functions.secretWord = functions.getRandomWord(c.math)
   elif functions.category == 'COMPUTER SCIENCE':
-    functions.secretWord = functions.getRandomWord(categories.compSci)
+    functions.secretWord = functions.getRandomWord(c.compSci)
   elif functions.category == 'SPORTS':
-    functions.secretWord = functions.getRandomWord(categories.sports)
+    functions.secretWord = functions.getRandomWord(c.sports)
   elif functions.category == 'MOVIES':
-    functions.secretWord = functions.getRandomWord(categories.movies)
+    functions.secretWord = functions.getRandomWord(c.movies)
   elif functions.category == 'MOVIE CHARACTERS':
-    functions.secretWord = functions.getRandomWord(categories.movieCharacters)
+    functions.secretWord = functions.getRandomWord(c.movieCharacters)
   elif functions.category == 'TV SHOWS':
-    functions.secretWord = functions.getRandomWord(categories.tvShows)
+    functions.secretWord = functions.getRandomWord(c.tvShows)
   elif functions.category == 'RANDOM':
-    functions.secretWord = functions.getRandomWord(categories.randomCategory)
+    functions.secretWord = functions.getRandomWord(c.randomCategory)
   elif functions.category == 'CUSTOM':
-    functions.secretWord = functions.getRandomWord(categories.customCategory)
+    functions.secretWord = functions.getRandomWord(c.customCategory)
 
 def playAgain():
     # This function returns True if the player wants to play again, otherwise it returns False.
@@ -165,10 +165,10 @@ def changeCategory():
   os.system('clear')
   while True:
     print('Return to main menu? (yes or no)')
-    diffCategory = input()
-    if diffCategory.lower().startswith('y'):
+    diff = input()
+    if diff.lower().startswith('y'):
       return True
-    elif diffCategory.lower().startswith('n'):
+    elif diff.lower().startswith('n'):
       return False
     else: 
       print('Invalid input')
