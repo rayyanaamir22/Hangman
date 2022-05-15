@@ -41,8 +41,7 @@ while True:
             os.system('clear')
             f.winStreak += 1
             f.displayBoard(HANGMANPICS, missedLetters, correctLetters, f.secretWord)
-            print('Yes! The secret word is "' + f.secretWord +
-                  '"! You have won!')
+            print(f'Yes! The secret word is \"{f.secretWord}\"! You have won!')
             gameIsDone = True
     else:
         missedLetters = missedLetters + guess
@@ -54,9 +53,9 @@ while True:
             # Inform user they have lost, and present the amount of correct and incorrect guesses
             # If the amount of correct guesses is 1, say "1 correct guess" instead of "1 correct guesses"
             if int(len(correctLetters)) != 1:
-              print('You have run out of guesses!\nAfter ' + str(len(missedLetters)) + ' missed guesses and ' + str(len(correctLetters)) + ' correct guesses, the word was "' + f.secretWord + '"')
+              print(f'You have run out of guesses!\nAfter {len(missedLetters)} missed guesses and {len(correctLetters)} correct guesses, the word was "{f.secretWord}"')
             elif int(len(correctLetters)) == 1:
-              print('You have run out of guesses!\nAfter ' + str(len(missedLetters)) + ' missed guesses and ' + str(len(correctLetters)) + ' correct guess, the word was "' + f.secretWord + '"')
+              print(f'You have run out of guesses!\nAfter {len(missedLetters)} missed guesses and 1 correct guess, the word was "{f.secretWord}"')
             else:
               continue
 
