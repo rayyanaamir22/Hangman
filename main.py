@@ -53,9 +53,9 @@ while True:
             # Inform user they have lost, and present the amount of correct and incorrect guesses
             # If the amount of correct guesses is 1, say "1 correct guess" instead of "1 correct guesses"
             if int(len(correctLetters)) != 1:
-              print(f'You have run out of guesses!\nAfter {len(missedLetters)} missed guesses and {len(correctLetters)} correct guesses, the word was "{f.secretWord}"')
+              print(f'You have run out of guesses!\nAfter 6 missed guesses and {len(correctLetters)} correct guesses, the word was "{f.secretWord}"')
             elif int(len(correctLetters)) == 1:
-              print(f'You have run out of guesses!\nAfter {len(missedLetters)} missed guesses and 1 correct guess, the word was "{f.secretWord}"')
+              print(f'You have run out of guesses!\nAfter 6 missed guesses and 1 correct guess, the word was "{f.secretWord}"')
             else:
               continue
 
